@@ -21,3 +21,4 @@ To run this project locally, perform the following steps:
 * Use this command to download the project to your machine: git clone https://github.com/emmoro/app_contact.git
 * To install all of its dependencies and start each app, follow the instructions below:
 * To run the server. Application address in BloomRPC: "0.0.0.0:50051"
+* Comand to start the project: gradlew run
