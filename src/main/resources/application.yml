@@ -1,0 +1,61 @@
+micronaut.application.name: app
+enviroment: Dev
+
+micronaut:
+  server:
+    context-path: /app
+    port: 8180
+  application:
+    name: app
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        step: PT1M
+        descriptions: true
+    binders:
+      jvm:
+        enabled: true
+      web:
+        enabled: true
+      uptime:
+        enabled: true
+      processor:
+        enabled: true
+      files:
+        enabled: true
+      logback:
+        enabled: true
+endpoints:
+  prometheus:
+    sensitive: false
+  healf:
+    details-visible: ANONYMOUS
+    jdbc:
+      enabled: true
+    disk-space:
+      enabled: true
+
+# MySQL
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/teste?useTimezone=true&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    schema-generate: UPDATE
+    dialect: MYSQL
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+
+grpc:
+  server:
+    port: 50051
+
+sts:
+  validation: teste

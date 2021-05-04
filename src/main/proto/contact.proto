@@ -1,0 +1,101 @@
+syntax= "proto3";
+
+option java_package = "com.example.grpc.adapters.grpc";
+option java_multiple_files = true;
+
+package com.example.grpc.adapters.grpc;
+
+service ContactService {
+
+  rpc SaveContact(SaveContactRequest) returns (SaveContactResponse) {};
+
+  rpc FindByIdContact(FindByIdContactRequest) returns (FindByIdContactResponse) {};
+
+  rpc FindAllContacts(FindAllContactsRequest) returns (FindAllContactsResponse) {};
+
+  rpc UpdateContact(UpdateContactRequest) returns (UpdateContactResponse) {};
+
+  rpc DeleteContact(DeleteContactRequest) returns (DeleteContactResponse) {};
+
+}
+
+message SaveContactRequest {
+  string name = 1;
+  string phone = 2;
+  string emails = 3;
+  string creation_date = 4;
+  string update_date = 5;
+}
+
+message SaveContactResponse {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+  string emails = 4;
+  string creation_date = 5;
+  string update_date = 6;
+}
+
+message FindByIdContactRequest {
+  int64 id = 1;
+}
+
+message FindByIdContactResponse {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+  string emails = 4;
+  string creation_date = 5;
+  string update_date = 6;
+}
+
+message FindAllContactsRequest {
+  int32 page = 1;
+  int32 size = 2;
+}
+
+message FindAllContactsResponse {
+  repeated Contact contacts = 1;
+  PageInfo page_info = 2;
+}
+
+message Contact {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+  string emails = 4;
+  string creation_date = 5;
+  string update_date = 6;
+}
+
+message UpdateContactRequest {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+  string emails = 4;
+  string creation_date = 5;
+  string update_date = 6;
+}
+
+message UpdateContactResponse {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+  string emails = 4;
+  string creation_date = 5;
+  string update_date = 6;
+}
+
+message DeleteContactRequest {
+  int64 id = 1;
+}
+
+message DeleteContactResponse {
+  string message = 1;
+}
+
+message PageInfo {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 total_size = 3;
+}
