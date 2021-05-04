@@ -1,7 +1,7 @@
 ## Project Kotlin with GRPC and Micronaut
 * This project save the information about the Contact
-* Is necessary tool to call the method in GRPC
-* I used BloomRPC: https://appimage.github.io/BloomRPC/
+* Necessary use some tool to call the method in GRPC.
+* It was used BloomRPC: https://appimage.github.io/BloomRPC/
 
 ## Requirements
 You will need to following tools in order to work with this project and code:
